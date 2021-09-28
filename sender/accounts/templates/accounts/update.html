@@ -1,0 +1,27 @@
+{% extends "./layout/base.html" %}
+{% load static %}
+<h1>Update you profile</h1>
+{% block content %}
+<h3> You are signed in as {{user.profile.user}}.</h3>
+<h3> Your email is {{user.profile.email}}.</h3>
+
+<nav class="mb-3">
+    {% if user.profile.wants_email == True %}
+        <h4> Sending of notification emails is set to YES.
+            If you want to change it,
+        please change the settings bellow.</h4>
+    {% endif %}
+
+<nav class="mb-3">
+    {% if user.profile.wants_email == False %}
+        <h4> Sending of notification emails is set to NO.
+            If you want to change it,
+        please change the settings bellow.</h4>
+    {% endif %}
+
+    <form action="/accounts/update/" method="post">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="update">
+    </form>
+{% endblock content %}

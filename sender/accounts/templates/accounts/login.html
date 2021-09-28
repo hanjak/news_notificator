@@ -1,0 +1,14 @@
+{% extends "./layout/base.html" %}
+{% load static %}
+
+{% block content %}
+    <h1>Log In</h1>
+    <form action="{% url 'accounts:login' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Log In">
+    </form>
+    {% if form.errors %}
+        <h5>Username or password is incorrect!</h5>
+    {% endif %}
+{% endblock content %}

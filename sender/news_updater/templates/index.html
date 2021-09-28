@@ -1,0 +1,51 @@
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Welcome</title>
+</head>
+<body>
+
+<nav class="mb-3">
+    {% if user.is_authenticated %}
+        <h1>Hello Welcome to the ZŠ VĚRY ČÁSLAVSKÉ NEWS NOTIFICATOR!</h1>
+        <h2>Congrats! You already signed up and you will get email notification every time there is an
+            update in the "NEWS" section at the school
+            <a href="https://www.zsverycaslavske.cz/">webpage.</a>
+        </h2>
+
+
+
+
+        <form action="{% url 'accounts:logout' %}" method="post">
+            {% csrf_token %}
+            <button class="btn btn-primary btn-sm" type="submit">LOG OUT</button>
+        </form>
+        <h5>If you don't want to receive notification email, please update your
+            settings in the update section.
+        </h5>
+        <button onclick="location.href = '/accounts/update'">UPDATE</button>
+
+    {% endif %}
+</nav>
+
+<nav class="mb-3">
+    {% if not user.is_authenticated %}
+        <h1>Hello Welcome to the ZŠ VĚRY ČÁSLAVSKÉ NEWS NOTIFICATOR!</h1>
+        <h2>
+            Do you want to get email notification every time there is an
+            update in the "NEWS" section at the school
+            <a href="https://www.zsverycaslavske.cz/">webpage</a>
+            ? Signup!
+        </h2>
+        <button onclick="location.href = '/accounts/signup'">SIGN UP</button>
+
+        <button onclick="location.href = '/accounts/login'">LOG IN</button>
+
+    {% endif %}
+</nav>
+
+<h3>Last published news at the webpage was: </h3>
+    <h4>"{{text}}",  details can be found
+    <a href="https://www.zsverycaslavske.cz/#aktualni-informace">here.</a>
+    </h4>
+</body>
