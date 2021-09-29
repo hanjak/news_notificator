@@ -6,7 +6,7 @@ News Notificator is simple web app written in python and django. The main goal o
 
 The app contains django authentication system (accounts), which allowes users to signup, login and log out, so that they can receive notification emails. If the user doesnt want to get notification emails anymore, she can edit settings in the update section.
 
-The app also contains web scrapping part (news_updater), which scrapes the webpage using beuatifulsoup4. 
+The app also contains web scrapping part (news_updater), which scrapes the webpage using beuatifulsoup4 and the regulary activity is set using APScheduler. 
 
 ## TODO
 Design
