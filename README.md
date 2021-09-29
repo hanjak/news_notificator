@@ -1,4 +1,4 @@
-# news_notificator9
+# news_notificator
 Simple web and webscrapping app that regulary checks web page  and if there is any news it sends notification to signed up users.
 
 ## Introduction
