@@ -3,5 +3,5 @@ from news_updater import news_downloader
 
 def start():
     scheduler = BackgroundScheduler()
-    scheduler.add_job(news_downloader.send_webnews_notification, 'interval', minutes=360)
+    scheduler.add_job(news_downloader.check_webnews, 'interval', minutes=1)
     scheduler.start()

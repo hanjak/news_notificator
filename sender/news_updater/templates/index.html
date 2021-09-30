@@ -43,9 +43,10 @@
 
     {% endif %}
 </nav>
-
-<h3>Last published news at the webpage was: </h3>
-    <h4>"{{text}}",  details can be found
-    <a href="https://www.zsverycaslavske.cz/#aktualni-informace">here.</a>
-    </h4>
+<nav class="mb-3">
+    <h3>Last published news at the webpage was: </h3>
+        <h4>"{{text}}", published on{{date}},  details can be found
+        <a href="https://{{link}}">here.</a>
+        </h4>
+</nav>
 </body>
