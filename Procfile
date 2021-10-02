@@ -1,1 +1,1 @@
-web: gunicorn wsgi:sender
+web: gunicorn
