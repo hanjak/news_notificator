@@ -1,6 +1,8 @@
 # news_notificator
 Simple web and webscrapping app that regulary checks web page  and if there is any news it sends notification to signed up users.
 
+https://newsnotificator.herokuapp.com/
+
 ## Introduction
 News Notificator is simple web app written in python and django. The main goal of the app is to check if there is some new information at the school webpage (ZS Věry Čáslavské, www.zsverycaslavske.cz) and, if yes, send notification email, so that parents dont need to check the web manually every day.
 
